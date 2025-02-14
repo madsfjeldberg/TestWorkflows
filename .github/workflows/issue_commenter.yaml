@@ -11,5 +11,12 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - name: "Dump GitHub context"
-        run: echo '${{ toJson(github) }}' | jq 
+      # - name: "Dump GitHub context"
+      #  run: echo '${{ toJson(github) }}' | jq 
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            This is the greatest issue of all time. :tada:
+          reactions: '+1'
