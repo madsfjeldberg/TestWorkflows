@@ -6,7 +6,7 @@ permissions:
 on:
   issues:
     types: [opened]
-
+😩
 jobs:
   comment:
     runs-on: ubuntu-latest
